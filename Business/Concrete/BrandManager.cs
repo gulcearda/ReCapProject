@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 
 namespace Business.Concrete
 {
     public class BrandManager : IBrandService
     {
+        IBrandDal _brandDal;
+
+        public BrandManager(IBrandDal brandDal)
+        {
+            _brandDal = brandDal;
+        }
+
         public void Add(Brand brand)
         {
             throw new NotImplementedException();
@@ -19,7 +27,12 @@ namespace Business.Concrete
 
         public List<Brand> GetAll()
         {
-            throw new NotImplementedException();
+            return _brandDal.GetAll();
+        }
+
+        public Brand GetById(int brandId)
+        {
+            return _brandDal.Get(b => b.BrandId == brandId);
         }
 
         public void Update(Brand brand)

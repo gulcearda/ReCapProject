@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -48,6 +49,11 @@ namespace Business.Concrete
         public List<Car> GetByDailyPrice(int min, int max)
         {
             throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carDal.GetCarDetails();
         }
 
         public List<Car> GetCarsByBrandId(int id)

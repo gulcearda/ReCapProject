@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -14,8 +15,8 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryCarDal()
         {
             _cars = new List<Car> {
-                new Car{Id=1, BrandId=10, ColorId=3, ModelYear=2016, DailyPrice=120000, Description="Skoda"},
-                new Car{Id=2, BrandId=20, ColorId=2, ModelYear=2004, DailyPrice=50000, Description="Hyundai"},
+                new Car{CarId=1, BrandId=10, ColorId=3, ModelYear=2016, DailyPrice=120000, Description="Skoda"},
+                new Car{CarId=2, BrandId=20, ColorId=2, ModelYear=2004, DailyPrice=50000, Description="Hyundai"},
             };
         }
 
@@ -27,7 +28,7 @@ namespace DataAccess.Concrete.InMemory
         public void Delete(Car car)
         {
 
-            Car carDelete = _cars.SingleOrDefault(c=>c.Id==car.Id);
+            Car carDelete = _cars.SingleOrDefault(c=>c.CarId==car.CarId);
 
             _cars.Remove(carDelete);
         }
@@ -47,14 +48,19 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public List<Car> GetById(int Id)
+        public List<Car> GetById(int id)
         {
-            return _cars.Where(c => c.Id == Id).ToList();
+            return _cars.Where(c => c.CarId == id).ToList();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
         {
-            Car carUpdate = _cars.SingleOrDefault(c => c.Id == car.Id);
+            Car carUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId);
             carUpdate.BrandId = car.BrandId;
             carUpdate.ColorId = car.ColorId;
             carUpdate.DailyPrice = car.DailyPrice;
