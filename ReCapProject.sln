@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console2", "Console2\Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{69B42EE2-35A8-4101-878F-A8779B7B4DF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCarApi", "CarsController\RentCarApi.csproj", "{725026BB-ECCF-4918-9A99-57CD8F5F57F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{69B42EE2-35A8-4101-878F-A8779B7B4DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B42EE2-35A8-4101-878F-A8779B7B4DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69B42EE2-35A8-4101-878F-A8779B7B4DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725026BB-ECCF-4918-9A99-57CD8F5F57F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725026BB-ECCF-4918-9A99-57CD8F5F57F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725026BB-ECCF-4918-9A99-57CD8F5F57F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725026BB-ECCF-4918-9A99-57CD8F5F57F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
