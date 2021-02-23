@@ -10,6 +10,8 @@
     <Folder Include="Constants\" />
     <Folder Include="DependencyResolvers\" />
     <Folder Include="DependencyResolvers\Autofac\" />
+    <Folder Include="ValidationRules\" />
+    <Folder Include="ValidationRules\FluentValidation\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
@@ -19,5 +21,6 @@
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
   </ItemGroup>
 </Project>

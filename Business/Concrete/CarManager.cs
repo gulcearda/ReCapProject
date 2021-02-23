@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -21,17 +24,13 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
+            //validation
+            
+            ValidationTool.Validate(new CarValidator(), car);
+
+            //business codes
+
             _carDal.Add(car);
-
-            if (car.DailyPrice == 0)
-            {
-                return new ErrorResult("Aracın günlük fiyatı 0'dan büyük olmalıdır");
-            }
-
-            else if (car.Description.Length<2)
-            {
-                return new ErrorResult("Aracın ismi min 2 karakter olmalıdır");
-            }
 
             return new SuccessResult(Messages.CarAdded);
         }
