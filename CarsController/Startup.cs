@@ -33,9 +33,9 @@ namespace CarsController
             //Autofac, Ninject, CastleWindsor, StructureMapi LightInject, DryInject -->IoC Conteiner
             //AoP yapılacak
             services.AddControllers();
-            services.AddSingleton<ICarService, CarManager>();
+            //services.AddSingleton<ICarService, CarManager>();
             //arka planda bizim için newliyor ve paketleyip gönderiyor bize.
-            services.AddSingleton<ICarDal, EfCarDal>();
+            //services.AddSingleton<ICarDal, EfCarDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
